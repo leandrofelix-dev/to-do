@@ -89,18 +89,25 @@ body {
 }
 
 .header-card-content {
-    width: 86%;
+    width: 82%;
     height: 72%;
+    justify-content: space-between;
 }
 
-.header-card-content>h3 {
+.header-card-content>div>h3 {
     color: var(--title-color);
     font-size: var(--title-size);
 }
 
-.header-card-content>p {
+.header-card-content>div>p,
+.header-card-content>div>p>span {
     color: var(--desc-color);
     font-size: var(--desc-size);
+}
+
+.edit-button {
+    cursor: pointer;
+    margin-right: 8px;
 }
 
 .add-task-button {
