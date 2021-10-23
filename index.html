@@ -5,44 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do</title>
+    <title>To-do | Leandro Félix</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="shortcut icon" href="../to-do/src/icons/edit.svg" type="image/x-icon">
+    <!-- Implementação da tipografia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="flex">
     <!-- Main -->
     <div class="main">
         <!-- Card -->
-        <div class="card flex-v">
-            <!-- Header card -->
-            <div class="header-card flex-h">
-                <div class="color-tag" id="color-tag"></div>
-                <div class="header-card-content flex-h">
-                    <div>
-                        <h3>Geral</h3>
-                        <p><span id="task-lenght">0</span> tarefas</p>
-                    </div>
-                    <img src="../to-do/src/icons/edit.svg" alt="" srcset="" class="edit-button">
-                </div>
+        <header>
+            <div class="card flex-v">
+                <!-- Header card -->
+                <div>
+                    <div class="header-card flex-h">
+                        <div class="color-tag" id="color-tag"></div>
+                        <div class="header-card-content flex-h">
+                            <div>
+                                <h3>Geral</h3>
+                                <p><span id="task-lenght">0</span> tarefas</p>
+                            </div>
+                            <img src="../to-do/src/icons/options.svg" alt="" srcset="" class="edit-button" onclick="openSelectColor()">
+                        </div>
 
-            </div>
-            <div class="tasks">
-                <form class="card-form flex-v" id="card-form">
-                </form>
-            </div>
-            <!-- Input task button -->
-            <div>
-                <button class="add-task-button" id="add-task-button" onclick="openTaskManager()">+ adicionar tarefas</button>
-            </div>
+                    </div>
+                    <div class="select-color" id="select-color">
+                        <ul>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors" id="color_yellow"></div>
+                            </li>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors" id="color_green"></div>
+                            </li>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors" id="color_blue"></div>
+                            </li>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors" id="color_red"></div>
+                            </li>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors" id="color_purple"></div>
+                            </li>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors" id="color_pink"></div>
+                            </li>
+                            <li onclick="closeSelectColor()">
+                                <div class="colors flex" id="color_r">
+                                    <img src="../to-do/src/icons/random.svg" alt="" srcset="">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </header>
+        <!-- Tasks div -->
+        <div class="tasks" id="tasks">
+            <form class="card-form flex-v" id="card-form">
+            </form>
         </div>
-    </div>
-    <!-- Input task window -->
-    <div class="input-task-out flex" id="input-task-out">
-        <a id="close" onclick="closeTaskManager()">fecha</a>
-        <div class="input-task flex-v flex-h">
-            <input type="text" id="add-task-input">
-            <button class="flex" onclick="addTask()">ADICIONAR</button>
+        <!-- Input task window -->
+        <section id="task-manager-section">
+            <div class="input-task-out flex" id="input-task-out">
+                <div class="input-task flex-v flex-h">
+                    <input type="text" placeholder="Insira aqui sua tarefa" id="add-task-input">
+                    <span id="alert-span">Por favor, insira uma tarefa.</span>
+                    <button class="btn flex" id="task-manager-button" onclick="addTask()">confirmar</button>
+                </div>
+            </div>
+        </section>
+        <!-- Input task button -->
+        <div>
+            <button class="btn" id="add-task-button" onclick="openTaskManager()">+ adicionar tarefas</button>
+        </div>
         </div>
     </div>
     <script src="src/js/main.js" await></script>
