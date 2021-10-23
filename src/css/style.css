@@ -1,4 +1,6 @@
 :root {
+    /* Default color */
+    --default: #6c5ce7;
     /* Element colors */
     --background: #e6e9ef;
     --background-op: rgba(0, 0, 0, 0.4);
@@ -54,6 +56,10 @@ section {
     margin-bottom: 10px;
 }
 
+label {
+    font-weight: bold;
+}
+
 input::placeholder {
     padding: 4px;
     font-weight: bold;
@@ -104,6 +110,7 @@ input::placeholder {
     color: var(--white);
     text-transform: uppercase;
     cursor: pointer;
+    background: var(--default);
 }
 
 .header-card {
@@ -168,6 +175,7 @@ input::placeholder {
     width: 6px;
     height: 46px;
     border-radius: var(--tag-radius);
+    background: var(--default);
 }
 
 .header-card-content {

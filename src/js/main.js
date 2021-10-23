@@ -1,37 +1,58 @@
-window.onload = setRandomColor();
+function setColor(selected_color) {
+    const colors = ['yellow', 'green', 'blue', 'red', 'purple', 'pink'];
 
-function setRandomColor() {
-    const colors = [
-        'yellow',
-        'green',
-        'blue',
-        'red',
-        'purple',
-        'pink'
-    ];
-    const min = 0;
-    let max = (colors.length) - 1;
-    let selectedColor = Math.floor(Math.random() * (max - min + 1)) + min;
-    let defaultColorPreview = colors[selectedColor];
-    let defaultColor = 'var(--' + defaultColorPreview + ')';
+    switch (selected_color) {
+        case 0:
+            color = 0
+            break;
+        case 1:
+            color = 1
+            break;
+        case 2:
+            color = 2
+            break;
+        case 3:
+            color = 3
+            break;
+        case 4:
+            color = 4
+            break;
+        case 5:
+            color = 5
+            break;
+        case 'r':
+            // Para setar uma cor aleatória
+            const min = 0;
+            let max = (colors.length) - 1;
+            let random_number = Math.floor(Math.random() * (max - min + 1)) + min;
+            color = random_number;
+            break;
+    }
+
+
+    let default_color_preview = colors[color];
+
+    let default_color = 'var(--' + default_color_preview + ')';
 
     let color_tag = document.querySelector('#color-tag');
     let add_task_button = document.querySelector('#add-task-button');
     let task_manager_button = document.querySelector('#task-manager-button');
     let add_task_input = document.querySelector('#add-task-input');
 
-    color_tag.style.background = defaultColor;
-    add_task_button.style.background = defaultColor;
-    task_manager_button.style.background = defaultColor;
-    add_task_input.style.borderColor = defaultColor;
+    color_tag.style.background = default_color;
+    add_task_button.style.background = default_color;
+    task_manager_button.style.background = default_color;
+    add_task_input.style.borderColor = default_color;
 }
 
 function openSelectColor() {
     document.querySelector('#select-color').style.display = 'block';
+
 }
 
 function closeSelectColor() {
     document.querySelector('#select-color').style.display = 'none';
+
 }
 
 function openTaskManager() {
