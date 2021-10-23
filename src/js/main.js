@@ -29,7 +29,6 @@ function setColor(selected_color) {
             break;
     }
 
-
     let default_color_preview = colors[color];
 
     let default_color = 'var(--' + default_color_preview + ')';
@@ -47,12 +46,10 @@ function setColor(selected_color) {
 
 function openSelectColor() {
     document.querySelector('#select-color').style.display = 'block';
-
 }
 
 function closeSelectColor() {
     document.querySelector('#select-color').style.display = 'none';
-
 }
 
 function openTaskManager() {
@@ -68,18 +65,22 @@ function addTask() {
     if (new_task == '') {
         document.querySelector('#alert-span').style.display = 'block';
     } else {
+        const div_nova = document.createElement('div');
+        const input_novo = document.createElement('input');
+        const label_novo = document.createElement('label');
 
-        const inputNovo = document.createElement('input');
-        const labelNovo = document.createElement('label');
-        const elementoAtual = document.getElementById("e");
+        div_nova.appendChild(input_novo);
+        div_nova.appendChild(label_novo);
+
+        const elementoAtual = document.querySelector('#e');
         const box = document.querySelector('#card-form');
         let conteudo = document.createTextNode(new_task);
 
-        inputNovo.type = 'checkbox';
-        labelNovo.appendChild(conteudo);
+        input_novo.type = 'checkbox';
+        div_nova.className = "task-div";
+        label_novo.appendChild(conteudo);
 
-        box.insertBefore(labelNovo, elementoAtual);
-        box.insertBefore(inputNovo, labelNovo);
+        box.insertBefore(div_nova, elementoAtual);
 
         let taskLenght = document.querySelectorAll('label').length;
         const taskLenghtIndicator = document.querySelector('#task-lenght');
