@@ -1,0 +1,141 @@
+:root {
+    /* Element colors */
+    --background: #e6e9ef;
+    --background-op: rgba(0, 0, 0, 0.4);
+    --title-color: #2d3436;
+    --desc-color: #636e72;
+    /* Simple colors */
+    --yellow: #fdcb6e;
+    --yellow-hover: #f8bf56;
+    --green: #00b894;
+    --green-hover: #02aa88;
+    --blue: #0984e3;
+    --blue-hover: #0273c9;
+    --red: #d63031;
+    --red-hover: #c42c2c;
+    --purple: #6c5ce7;
+    --purple-hover: #5d4fc4;
+    --pink: #e84393;
+    --pink-hover: #df3c8a;
+    --white: #fcfcfc;
+    /* Font size */
+    --title-size: 20px;
+    --desc-size: 14px;
+    /* Radius */
+    --box-radius: 14px;
+    --header-radius: 16px;
+    --button-radius: 12px;
+    --tag-radius: 6px;
+    /* Shadow */
+    --box-shadow: -4px 6px 20px 11px #0000000d;
+    --button-shadow: -1px 4px 8px 1px #00000014;
+}
+
+* {
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+body {
+    background: var(--background);
+    height: 100vh;
+    width: 100vw;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-h {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.flex-v {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    width: 280px;
+    height: 100%;
+}
+
+.card>div {
+    margin: 10px 0;
+}
+
+.header-card {
+    height: 68px;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--header-radius);
+    justify-content: space-evenly;
+}
+
+.color-tag {
+    width: 6px;
+    height: 46px;
+    border-radius: var(--tag-radius);
+}
+
+.header-card-content {
+    width: 86%;
+    height: 72%;
+}
+
+.header-card-content>h3 {
+    color: var(--title-color);
+    font-size: var(--title-size);
+}
+
+.header-card-content>p {
+    color: var(--desc-color);
+    font-size: var(--desc-size);
+}
+
+.add-task-button {
+    width: 100%;
+    height: 48px;
+    border-radius: var(--button-radius);
+    color: var(--white);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.add-task:hover {
+    box-shadow: var(--button-shadow);
+}
+
+.input-task {
+    width: 40vw;
+    height: 20vh;
+    background: var(--white);
+    position: fixed;
+    z-index: 1;
+    border-radius: var(--box-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.input-task-out {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background-op);
+}
+
+#close {
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+}

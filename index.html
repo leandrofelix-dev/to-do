@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body class="flex">
+    <!-- Main -->
+    <div class="main">
+        <!-- Card -->
+        <div class="card flex-v">
+            <!-- Header card -->
+            <div class="header-card flex-h">
+                <div class="color-tag" id="color-tag"></div>
+                <div class="header-card-content flex-v">
+                    <h3>Geral</h3>
+                    <p>0 tarefas</p>
+                </div>
+
+            </div>
+            <div class="tasks">
+                <form class="card-form flex-v" id="card-form">
+                </form>
+            </div>
+            <div>
+                <button class="add-task-button" id="add-task-button" onclick="openTaskManager()">+ adicionar tarefas</button>
+            </div>
+        </div>
+    </div>
+    <div class="input-task-out flex" id="input-task-out">
+        <a id="close" onclick="closeTaskManager()">fecha</a>
+        <div class="input-task flex-v flex-h">
+            <input type="text">
+            <button class="flex">ADICIONAR</button>
+        </div>
+    </div>
+    <script src="src/js/main.js" await></script>
+</body>
+
+</html>
