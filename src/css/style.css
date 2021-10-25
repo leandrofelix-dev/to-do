@@ -3,6 +3,7 @@
     --default: #6c5ce7;
     /* Element colors */
     --background: #e6e9ef;
+    --background-dark: #000310;
     --background-op: rgba(0, 0, 0, 0.4);
     --title-color: #2d3436;
     --desc-color: #636e72;
@@ -102,16 +103,20 @@ input::placeholder {
     margin: 10px 0;
 }
 
+#tasks {
+    padding: 10px;
+}
+
 .task-div {
     background: var(--white);
     padding: 10px;
     border-radius: var(--button-radius);
     color: var(--desc-color);
-    margin: 10px 0;
+    margin: 4px 0;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    max-width: 260px;
+    justify-content: left;
+    width: 260px;
 }
 
 .task-div>label {
