@@ -1,5 +1,6 @@
 window.onload = convertLocalStorageValuesToElements();
 
+
 function setColor(selected_color) {
 
     colors = [
@@ -111,6 +112,33 @@ function saveInLocalStorage(new_task) {
     localStorage.setItem(taskLenght, new_task);
 }
 
+function setColorMode(mode) {
+    const body = document.querySelector('body');
+    let dark = document.querySelector("#dark");
+    let light = document.querySelector("#light");
+
+    switch (mode) {
+        case 'dark':
+            body.style.background = 'var(--background-dark)';
+            light.style.backgroundImage = 'url(src/icons/mode/light.svg)';
+            light.style.display = 'block';
+            dark.style.display = 'none';
+
+            break;
+        case 'light':
+            body.style.background = 'var(--background)';
+            dark.style.backgroundImage = 'url(src/icons/mode/dark.svg)';
+            light.style.display = 'none';
+            dark.style.display = 'block';
+            break;
+
+        default:
+            break;
+    }
+    window.localStorage.setItem('mode', mode);
+
+}
+
 function convertLocalStorageValuesToElements() {
     for (let i = 1; i <= localStorage.length; i++) {
         let new_task = localStorage.getItem(i);
@@ -137,14 +165,32 @@ function convertLocalStorageValuesToElements() {
             document.querySelector('#input-task-out').style.display = 'none';
             document.querySelector('#alert-span').style.display = 'none';
 
-            colorOfLocalStorage = localStorage.getItem('color');
-
-            document.querySelector('#color-tag').style.background = colorOfLocalStorage;
-            document.querySelector('#add-task-button').style.background = colorOfLocalStorage;
-            document.querySelector('#task-manager-button').style.background = colorOfLocalStorage;
-            document.querySelector('#add-task-input').style.borderColor = colorOfLocalStorage;
 
         }
 
+    }
+    colorOfLocalStorage = localStorage.getItem('color');
+
+    document.querySelector('#color-tag').style.background = colorOfLocalStorage;
+    document.querySelector('#add-task-button').style.background = colorOfLocalStorage;
+    document.querySelector('#task-manager-button').style.background = colorOfLocalStorage;
+    document.querySelector('#add-task-input').style.borderColor = colorOfLocalStorage;
+    let mode = localStorage.getItem('mode');
+    switch (mode) {
+        case 'dark':
+            document.querySelector('body').style.background = 'var(--background-dark)';
+            document.querySelector("#light").style.backgroundImage = 'url(src/icons/mode/light.svg)';
+            document.querySelector("#light").style.display = 'block';
+            document.querySelector("#dark").style.display = 'none';
+            break;
+        case 'light':
+            document.querySelector('body').style.background = 'var(--background)';
+            document.querySelector("#dark").style.backgroundImage = 'url(src/icons/mode/dark.svg)';
+            document.querySelector("#light").style.display = 'none';
+            document.querySelector("#dark").style.display = 'block';
+            break;
+
+        default:
+            break;
     }
 }

@@ -3,7 +3,7 @@
     --default: #6c5ce7;
     /* Element colors */
     --background: #e6e9ef;
-    --background-dark: #000310;
+    --background-dark: #040818;
     --background-op: rgba(0, 0, 0, 0.4);
     --title-color: #2d3436;
     --desc-color: #636e72;
@@ -262,4 +262,24 @@ input::placeholder {
     cursor: pointer;
     position: fixed;
     right: 0;
+}
+
+.mode-icon {
+    position: fixed;
+    right: 32px;
+    top: 32px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../icons/mode/dark.svg);
+}
+
+#dark {
+    /* display: none; */
+}
+
+#light {
+    /* display: none; */
 }
